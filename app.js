@@ -2,6 +2,20 @@ const inputTugas = document.getElementById("inputTugas");
 const btnTambah = document.getElementById("btnTambah");
 const daftarTugas = document.getElementById("daftarTugas");
 
+const statTotalTugas = document.getElementById("totalTugas");
+const statTugasSelesai = document.getElementById("tugasSelesai");
+const statBelumSelesai = document.getElementById("belumSelesai");
+
+let totalTugas = 0;
+let tugasSelesai = 0;
+let belumSelesai = 0;
+
+function updateStatistik() {
+    statTotalTugas.textContent = totalTugas;
+    statTugasSelesai.textContent = tugasSelesai;
+    statBelumSelesai.textContent = belumSelesai;
+}
+
 function tambah() {
     const teks = inputTugas.value.trim();
     if (teks === "") return alert("Isi dulu tugasnya!");
